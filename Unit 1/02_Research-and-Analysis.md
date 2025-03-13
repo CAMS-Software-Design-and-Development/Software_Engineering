@@ -1,4 +1,6 @@
-**Instructions for Researching a Software/Program Idea for High School Students**
+# Introduction to Research and Analysis
+
+**Instructions for Researching a Software/Program Idea for development**
 
 As you begin your journey to develop a software program or app, it’s essential to start with thorough research. This research will help you understand the feasibility of your idea, the target audience, and the tools you'll need. Below are step-by-step instructions that will guide you through the process of researching a software idea, along with suggestions for analyzing and validating your idea.
 
