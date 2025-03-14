@@ -26,7 +26,8 @@ jobs:
           touch ../_build/.nojekyll
       - name: Commit and push changes
         run: |
-          git checkout gh-pages
+          git fetch origin
+          git checkout -b gh-pages origin/gh-pages
           cp ../_build ./
           git config --global user.name "CAMS SDD"
           git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
