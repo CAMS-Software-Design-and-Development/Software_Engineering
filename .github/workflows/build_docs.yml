@@ -20,7 +20,7 @@ jobs:
           pip install sphinx sphinx_rtd_theme myst_parser
       - name: Build Sphinx for GitHub Pages
         run: |
-          sphinx-build doc ../_build
+          sphinx-build ./ ../_build
       - name: Create .nojekyll
         run: |
           touch ../_build/.nojekyll
