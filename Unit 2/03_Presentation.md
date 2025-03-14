@@ -1,5 +1,4 @@
-
-**Instructions for High School Students to Present Their Business Plan, Marketing Plan, and Demonstrate Their Software/App**
+# **Instructions for High School Students to Present Their Business Plan, Marketing Plan, and Demonstrate Their Software/App**
 
 Presenting your business plan, marketing strategy, and the actual demonstration of your software or app to a group of people is an exciting and important part of your project. It’s your chance to showcase all the hard work your team has put into the project. Here are some steps to help you prepare and deliver a successful presentation.
 

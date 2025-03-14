@@ -1,4 +1,4 @@
-**Instructions to Develop a Marketing Strategy for your Software/Program/App Idea**
+# **Instructions to Develop a Marketing Strategy for your Software/Program/App Idea**
 
 Developing a marketing strategy is a crucial part of successfully launching any software, program, or app. As a team of high school students working on a software project, you’ll need to not only create the app but also ensure people know about it and want to use it. This requires a well-thought-out marketing plan.
 

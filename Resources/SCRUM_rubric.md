@@ -1,3 +1,5 @@
+# SCRUM Rubric
+
 ### 4-Point Rubric for Daily SCRUM
 
 | **Criteria**                    | **4 - Exemplary**                                                 | **3 - Proficient**                                                | **2 - Basic**                                                     | **1 - Needs Improvement**                                           |

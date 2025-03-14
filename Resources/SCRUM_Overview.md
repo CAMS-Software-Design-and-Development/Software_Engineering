@@ -1,4 +1,4 @@
-## SCRUM
+# SCRUM
 
 SCRUM is an Agile framework used to manage complex product development. It emphasizes iterative progress, collaboration, and adaptability. Here's a breakdown of the SCRUM phases, along with documentation that should be created or maintained during each phase:
 

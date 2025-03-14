@@ -1,3 +1,5 @@
+# Executive Summary
+
 ### 4-Point Rubric for Executive Summary of a Digital Product
 
 | **Criteria**                    | **4 - Exemplary**                                                 | **3 - Proficient**                                                | **2 - Basic**                                                     | **1 - Needs Improvement**                                           |

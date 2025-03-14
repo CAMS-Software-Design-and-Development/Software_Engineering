@@ -1,3 +1,5 @@
+# Best Practices
+
 Yes, there is a general structure and set of best practices that programmers follow when developing a game, regardless of the programming language. Game development involves a range of disciplines including design, programming, art, and sound, but from a **programming perspective**, there are key concepts, structures, and steps to follow to ensure maintainability, scalability, and performance.
 
 ### 1. **Game Design Document (GDD)**

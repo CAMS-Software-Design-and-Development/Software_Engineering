@@ -1,3 +1,5 @@
+# Marketing Proposal
+
 ### 4-Point Rubric for Marketing Proposal of a Digital Product
 
 | **Criteria**                    | **4 - Exemplary**                                                 | **3 - Proficient**                                                | **2 - Basic**                                                     | **1 - Needs Improvement**                                           |
