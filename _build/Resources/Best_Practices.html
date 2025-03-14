@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Best Practices &#8212; Software Engineering</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=d1102ebc" />
+    <link rel="stylesheet" type="text/css" href="../_static/basic.css?v=b08954a9" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css?v=27fed22d" />
+    <script src="../_static/documentation_options.js?v=2709fde1"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Executive Summary" href="ExecSummary_rubric.html" />
+    <link rel="prev" title="Instructions for High School Students to Present Their Business Plan, Marketing Plan, and Demonstrate Their Software/App" href="../Unit%202/03_Presentation.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="best-practices">
+<h1>Best Practices<a class="headerlink" href="#best-practices" title="Link to this heading">¶</a></h1>
+<p>Yes, there is a general structure and set of best practices that programmers follow when developing a game, regardless of the programming language. Game development involves a range of disciplines including design, programming, art, and sound, but from a <strong>programming perspective</strong>, there are key concepts, structures, and steps to follow to ensure maintainability, scalability, and performance.</p>
+<section id="game-design-document-gdd">
+<h2>1. <strong>Game Design Document (GDD)</strong><a class="headerlink" href="#game-design-document-gdd" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p><strong>What</strong>: Before writing any code, it’s important to have a clear plan. This is usually captured in a <strong>Game Design Document (GDD)</strong>.</p></li>
+<li><p><strong>Why</strong>: The GDD acts as a blueprint that outlines the gameplay mechanics, storyline, art style, and other high-level design concepts.</p></li>
+<li><p><strong>Components</strong>: This document might include:</p>
+<ul>
+<li><p>Gameplay mechanics</p></li>
+<li><p>Player progression</p></li>
+<li><p>Levels and environment design</p></li>
+<li><p>Character and asset design</p></li>
+<li><p>User interface (UI) design</p></li>
+<li><p>Sound and music requirements</p></li>
+</ul>
+</li>
+<li><p><strong>Outcome</strong>: A clear vision and a roadmap to follow, ensuring all team members (programmers, artists, designers) are aligned.</p></li>
+</ul>
+</section>
+<section id="game-engine">
+<h2>2. <strong>Game Engine</strong><a class="headerlink" href="#game-engine" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p><strong>What</strong>: Choose or build a <strong>game engine</strong> that suits your game’s needs. Popular engines like <strong>Unity</strong> (C#), <strong>Unreal Engine</strong> (C++/Blueprints), <strong>Godot</strong> (GDScript), and custom engines provide prebuilt components to accelerate development.</p></li>
+<li><p><strong>Why</strong>: Game engines provide essential tools like physics, rendering, input handling, and more, allowing developers to focus on the core gameplay mechanics rather than low-level system architecture.</p></li>
+<li><p><strong>Structure</strong>: Game engines generally organize your game in a way that helps developers structure their codebase, assets, and scenes efficiently.</p></li>
+</ul>
+</section>
+<section id="basic-game-architecture">
+<h2>3. <strong>Basic Game Architecture</strong><a class="headerlink" href="#basic-game-architecture" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p>The architecture of a game typically follows the <strong>Entity-Component-System (ECS)</strong> or <strong>Object-Oriented Programming (OOP)</strong> pattern:</p></li>
+</ul>
+<section id="entity-component-system-ecs-recommended-for-performance-and-flexibility">
+<h3><strong>Entity-Component-System (ECS)</strong> (Recommended for Performance and Flexibility):<a class="headerlink" href="#entity-component-system-ecs-recommended-for-performance-and-flexibility" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p><strong>Entities</strong>: The objects in the game (e.g., characters, obstacles, bullets).</p></li>
+<li><p><strong>Components</strong>: Data structures that hold information about an entity (e.g., position, health, sprite, velocity).</p></li>
+<li><p><strong>Systems</strong>: Logic that acts on entities with specific components (e.g., physics system, rendering system, AI system).</p></li>
+</ul>
+</section>
+<section id="object-oriented-programming-oop">
+<h3><strong>Object-Oriented Programming (OOP)</strong>:<a class="headerlink" href="#object-oriented-programming-oop" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p><strong>Classes</strong>: You’ll typically define different classes (e.g., Player, Enemy, Weapon) with attributes and methods that represent objects in the game.</p></li>
+<li><p><strong>Inheritance</strong>: Use inheritance to create relationships between objects (e.g., a <code class="docutils literal notranslate"><span class="pre">Zombie</span></code> class could inherit from a <code class="docutils literal notranslate"><span class="pre">Monster</span></code> class).</p></li>
+</ul>
+<p><strong>Structure Example (OOP)</strong>:</p>
+<ul class="simple">
+<li><p><strong>Game Loop</strong>: The central loop that updates the state of the game (e.g., input handling, physics, AI, rendering).</p>
+<ul>
+<li><p><strong>Update()</strong>: Processes all game logic (e.g., movement, collisions).</p></li>
+<li><p><strong>Render()</strong>: Draws the current state of the game to the screen.</p></li>
+<li><p><strong>Handle Input()</strong>: Manages user input (e.g., keyboard, mouse, controller).</p></li>
+</ul>
+</li>
+<li><p><strong>Game State Management</strong>: Keeps track of different game states such as loading, menu, playing, paused, and game over.</p></li>
+</ul>
+<p><strong>Structure Example (ECS)</strong>:</p>
+<ul class="simple">
+<li><p><strong>Entities</strong>: <code class="docutils literal notranslate"><span class="pre">Player</span></code>, <code class="docutils literal notranslate"><span class="pre">Enemy</span></code>, <code class="docutils literal notranslate"><span class="pre">Bullet</span></code>.</p></li>
+<li><p><strong>Components</strong>: <code class="docutils literal notranslate"><span class="pre">PositionComponent</span></code>, <code class="docutils literal notranslate"><span class="pre">HealthComponent</span></code>, <code class="docutils literal notranslate"><span class="pre">VelocityComponent</span></code>, <code class="docutils literal notranslate"><span class="pre">RenderComponent</span></code>.</p></li>
+<li><p><strong>Systems</strong>: <code class="docutils literal notranslate"><span class="pre">MovementSystem</span></code>, <code class="docutils literal notranslate"><span class="pre">CollisionSystem</span></code>, <code class="docutils literal notranslate"><span class="pre">RenderSystem</span></code>, <code class="docutils literal notranslate"><span class="pre">AISystem</span></code>.</p></li>
+</ul>
+</section>
+</section>
+<section id="separation-of-concerns-modularization">
+<h2>4. <strong>Separation of Concerns (Modularization)</strong><a class="headerlink" href="#separation-of-concerns-modularization" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p><strong>Why</strong>: Properly separating different aspects of the game into different modules or classes helps with maintainability, readability, and scalability.</p></li>
+<li><p><strong>Common Modules</strong>:</p>
+<ul>
+<li><p><strong>Game Logic</strong>: Core mechanics like movement, combat, AI, scoring, etc.</p></li>
+<li><p><strong>Graphics/Rendering</strong>: Code related to rendering objects, animations, and UI.</p></li>
+<li><p><strong>Physics</strong>: Handling collisions, gravity, forces, etc.</p></li>
+<li><p><strong>Input Handling</strong>: Managing user input from keyboard, mouse, or controller.</p></li>
+<li><p><strong>Audio</strong>: Sound effects and music management.</p></li>
+<li><p><strong>Networking (for Multiplayer)</strong>: If applicable, code related to managing network communication, synchronization, etc.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="asset-management">
+<h2>5. <strong>Asset Management</strong><a class="headerlink" href="#asset-management" title="Link to this heading">¶</a></h2>
+<ul>
+<li><p><strong>What</strong>: Games involve a lot of assets, including textures, models, sounds, and animations.</p></li>
+<li><p><strong>Why</strong>: Keeping these assets organized is critical for both performance and maintainability.</p></li>
+<li><p><strong>Structure</strong>:</p>
+<ul>
+<li><p><strong>Asset Pipeline</strong>: Define how assets will be created, converted into game-ready formats, and loaded into the game.</p></li>
+<li><p><strong>Folder Structure</strong>: Maintain a clean directory structure for different types of assets:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">assets</span>
+    <span class="o">/</span><span class="n">textures</span>
+    <span class="o">/</span><span class="n">models</span>
+    <span class="o">/</span><span class="n">audio</span>
+    <span class="o">/</span><span class="n">animations</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Loading Assets</strong>: Efficiently load and manage assets during gameplay. For large games, consider <strong>asynchronous loading</strong> to avoid stuttering or delays.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="game-loop">
+<h2>6. <strong>Game Loop</strong><a class="headerlink" href="#game-loop" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p>The <strong>game loop</strong> is the central function that runs the game’s operations:</p>
+<ol class="arabic simple">
+<li><p><strong>Input</strong>: Process user inputs (keyboard, mouse, etc.).</p></li>
+<li><p><strong>Update</strong>: Update the game state (AI, physics, object movement).</p></li>
+<li><p><strong>Render</strong>: Draw the updated game state to the screen.</p></li>
+<li><p><strong>Sound</strong>: Handle audio and sound effects.</p></li>
+<li><p><strong>Repeat</strong>: This loop continues running while the game is active.</p></li>
+</ol>
+</li>
+<li><p>A <strong>fixed timestep</strong> is used in many games to maintain consistency across different machines (i.e., making sure the game runs at the same rate regardless of the frame rate).</p></li>
+</ul>
+</section>
+<section id="testing-and-debugging">
+<h2>7. <strong>Testing and Debugging</strong><a class="headerlink" href="#testing-and-debugging" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p><strong>Automated Testing</strong>: Unit tests and integration tests for key gameplay features and systems.</p></li>
+<li><p><strong>Playtesting</strong>: Continuously test the game with real players to identify bugs and improve the player experience.</p></li>
+<li><p><strong>Debugging Tools</strong>: Use debugging tools to track performance issues, crashes, and logical errors.</p></li>
+</ul>
+</section>
+<section id="performance-optimization">
+<h2>8. <strong>Performance Optimization</strong><a class="headerlink" href="#performance-optimization" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p><strong>Profiling</strong>: Use profiling tools to analyze the game’s performance (CPU, GPU, memory usage).</p></li>
+<li><p><strong>Optimization</strong>: Focus on optimizing critical areas like:</p>
+<ul>
+<li><p>Frame rate and rendering (culling, LOD, etc.).</p></li>
+<li><p>Memory management (asset streaming, memory pools).</p></li>
+<li><p>Physics and AI (optimization algorithms).</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="version-control-and-collaboration">
+<h2>9. <strong>Version Control and Collaboration</strong><a class="headerlink" href="#version-control-and-collaboration" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p><strong>Version Control</strong>: Use version control (e.g., Git) to track changes to the codebase and collaborate with a team of developers.</p></li>
+<li><p><strong>Branching Strategy</strong>: Use a branching strategy to manage development (e.g., feature branches, mainline branches, release branches).</p></li>
+</ul>
+</section>
+<section id="deployment-and-distribution">
+<h2>10. <strong>Deployment and Distribution</strong><a class="headerlink" href="#deployment-and-distribution" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p><strong>Platform-Specific Code</strong>: Consider different target platforms (PC, console, mobile) and handle specific requirements (e.g., input methods, screen resolutions, performance optimization).</p></li>
+<li><p><strong>Build Pipeline</strong>: Set up a build pipeline to automatically compile and package the game.</p></li>
+<li><p><strong>Distribution</strong>: Manage how the game will be distributed (e.g., Steam, App Store, custom distribution).</p></li>
+</ul>
+</section>
+<section id="summary">
+<h2>Summary:<a class="headerlink" href="#summary" title="Link to this heading">¶</a></h2>
+<p>A professional game development process involves a clear design vision, structured and modular code architecture, organized asset management, and robust testing practices. By adhering to the principles of <strong>separation of concerns</strong>, using design patterns like <strong>ECS</strong> or <strong>OOP</strong>, and focusing on <strong>maintainability</strong>, a programmer can contribute effectively to the success of the game. The actual implementation can vary depending on the tools and engine used, but following these high-level guidelines will ensure your project is well-organized, scalable, and efficient.</p>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">SDD</a></h1>
+
+
+
+
+
+
+
+
+
+<search id="searchbox" style="display: none" role="search">
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Search"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script><h3>Navigation</h3>
+<p class="caption" role="heading"><span class="caption-text">Unit 1:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Unit%201/01_Introduction-to-SDD.html">Introduction to SDD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Unit%201/02_Research-and-Analysis.html">Research and Analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Unit%201/03_Software_Development.html">Software Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Unit%201/04_Testing.html">Testing</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Unit 2:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Unit%202/01_Business_Plan.html">Business Plan</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Unit%202/02_Marketing.html">Marketing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Unit%202/03_Presentation.html">Presentation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Resources</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Best Practices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ExecSummary_rubric.html">Executive Summary Rubric</a></li>
+<li class="toctree-l1"><a class="reference internal" href="MarketingProposal.html">Marketing Proposal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SCRUM_Overview.html">SCRUM Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SCRUM_rubric.html">SCRUM Rubric</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SDD_Structural-Considerations.html">SDD Structural Considerations</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="../Unit%202/03_Presentation.html" title="previous chapter"><strong>Instructions for High School Students to Present Their Business Plan, Marketing Plan, and Demonstrate Their Software/App</strong></a></li>
+      <li>Next: <a href="ExecSummary_rubric.html" title="next chapter">Executive Summary</a></li>
+  </ul></li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &#169;2025, Jonathan Virak.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 8.2.3</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 1.0.0</a>
+      
+      |
+      <a href="../_sources/Resources/Best_Practices.md.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

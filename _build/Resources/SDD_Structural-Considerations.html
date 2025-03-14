@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Structural Considerations &#8212; Software Engineering</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=d1102ebc" />
+    <link rel="stylesheet" type="text/css" href="../_static/basic.css?v=b08954a9" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css?v=27fed22d" />
+    <script src="../_static/documentation_options.js?v=2709fde1"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="SCRUM Rubric" href="SCRUM_rubric.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="structural-considerations">
+<h1>Structural Considerations<a class="headerlink" href="#structural-considerations" title="Link to this heading">¶</a></h1>
+<p>When developing a simulation for Virtual Reality (VR) using VR glasses, the structure and considerations differ from traditional 2D or even
+3D games because VR introduces specific challenges and opportunities. VR simulations require special handling for immersion, real-time performance,
+input mechanisms, and user comfort. Below are key aspects and recommended structures that programmers should follow when developing VR simulations,
+regardless of programming language:</p>
+<section id="understand-the-vr-platform-and-hardware">
+<h2>1. <strong>Understand the VR Platform and Hardware</strong><a class="headerlink" href="#understand-the-vr-platform-and-hardware" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p><strong>What</strong>: Different VR systems (e.g., Oculus, HTC Vive, PlayStation VR, or Windows Mixed Reality) have specific SDKs, hardware capabilities, and input methods.</p></li>
+<li><p><strong>Why</strong>: The way you implement VR input (like hand tracking, controllers, or even eye-tracking) will vary depending on the hardware, and it’s important to tailor your simulation to the hardware.</p></li>
+<li><p><strong>Action</strong>: Familiarize yourself with the VR platform’s SDK (e.g., Oculus SDK, SteamVR SDK, or Unity’s XR Toolkit) to ensure you’re following the best practices for that platform.</p></li>
+</ul>
+</section>
+<section id="user-centered-design-for-vr">
+<h2>2. <strong>User-Centered Design for VR</strong><a class="headerlink" href="#user-centered-design-for-vr" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p><strong>What</strong>: VR is highly immersive, meaning your simulation’s design must prioritize <strong>user comfort, intuitiveness, and engagement</strong>.</p></li>
+<li><p><strong>Why</strong>: Poor design can lead to motion sickness, discomfort, and disorientation, severely impacting the experience.</p></li>
+<li><p><strong>Structure</strong>: Focus on a few key aspects:</p>
+<ul>
+<li><p><strong>Comfort</strong>: Implement features like <strong>teleportation</strong> instead of walking for navigation, <strong>snap-turning</strong>, and adjustable comfort settings to avoid motion sickness.</p></li>
+<li><p><strong>Intuitive Interaction</strong>: Use natural gestures or controller mappings that align with human intuition (e.g., grabbing, pointing, or using hand gestures).</p></li>
+<li><p><strong>Accessibility</strong>: Consider designing for different users, including those with disabilities. For example, provide options to adjust movement speed, or include closed captions.</p></li>
+<li><p><strong>Testing</strong>: Continuously test your VR experience with real users to adjust based on comfort feedback.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="game-loop-adaptations-for-vr">
+<h2>3. <strong>Game Loop Adaptations for VR</strong><a class="headerlink" href="#game-loop-adaptations-for-vr" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p><strong>What</strong>: The standard game loop (input -&gt; update -&gt; render) is modified in VR because it needs to handle <strong>real-time interaction</strong> with immersive feedback.</p></li>
+<li><p><strong>Why</strong>: In VR, the loop often involves continuously tracking and responding to <strong>head movement</strong>, <strong>controller input</strong>, and <strong>environmental interactions</strong> in real time.</p></li>
+<li><p><strong>Structure</strong>: The VR loop usually consists of:</p>
+<ol class="arabic simple">
+<li><p><strong>Input</strong>: Capture VR-specific input like head position (for camera movement), hand gestures, controllers, and haptic feedback.</p></li>
+<li><p><strong>Update</strong>: Update the simulation based on input (e.g., change in object position, simulation state).</p></li>
+<li><p><strong>Rendering</strong>: Render two separate views (one for each eye), ensuring stereoscopic depth, motion, and immersion.</p></li>
+<li><p><strong>Feedback</strong>: Provide real-time feedback (haptic, visual, or audio) to the user to help them feel connected to the simulation.</p></li>
+</ol>
+</li>
+</ul>
+</section>
+<section id="scene-and-object-management">
+<h2>4. <strong>Scene and Object Management</strong><a class="headerlink" href="#scene-and-object-management" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p><strong>What</strong>: VR simulations often involve complex 3D environments that need to be optimized for real-time performance while ensuring a smooth and immersive experience.</p></li>
+<li><p><strong>Why</strong>: VR experiences demand high frame rates (usually 60+ FPS, ideally 90+ FPS for smooth motion) and low latency to avoid nausea or discomfort.</p></li>
+<li><p><strong>Structure</strong>:</p>
+<ul>
+<li><p><strong>Level Streaming</strong>: Consider techniques like <strong>level streaming</strong> or <strong>culling</strong> to load/unload assets dynamically to optimize performance.</p></li>
+<li><p><strong>Object Placement</strong>: Be mindful of the <strong>scale</strong> and <strong>interaction zones</strong>. Place objects in the environment where users expect them, based on their natural movement and perspective.</p></li>
+<li><p><strong>Optimization</strong>: Use <strong>LOD (Level of Detail)</strong> for distant objects, bake lighting for static elements, and optimize physics calculations to reduce computational load.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="input-management">
+<h2>5. <strong>Input Management</strong><a class="headerlink" href="#input-management" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p><strong>What</strong>: Input handling in VR is unique due to specialized devices such as controllers, motion sensors, or hand tracking.</p></li>
+<li><p><strong>Why</strong>: VR input differs from traditional input systems (keyboard, mouse) in that it requires spatial and gestural interactions.</p></li>
+<li><p><strong>Structure</strong>:</p>
+<ul>
+<li><p><strong>Controller Mapping</strong>: Map actions (e.g., grab, point, select) to VR controller buttons, triggers, or touchpads.</p></li>
+<li><p><strong>Gestural Input</strong>: Implement <strong>gesture recognition</strong> for more immersive and intuitive interactions.</p></li>
+<li><p><strong>Eye Tracking (if available)</strong>: Use eye-tracking data to enhance interaction (e.g., gaze-based selection or focus).</p></li>
+<li><p><strong>Voice Commands (optional)</strong>: Some VR systems allow voice input, which can be used for hands-free interaction, commands, or simulation control.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="camera-and-head-tracking">
+<h2>6. <strong>Camera and Head Tracking</strong><a class="headerlink" href="#camera-and-head-tracking" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p><strong>What</strong>: In VR, the camera (view) is controlled by the user’s head movement, making <strong>real-time head tracking</strong> crucial for immersion.</p></li>
+<li><p><strong>Why</strong>: The user’s field of view needs to adapt to head movements to create a believable 3D world. Any lag or inconsistency in this tracking can break immersion.</p></li>
+<li><p><strong>Structure</strong>:</p>
+<ul>
+<li><p><strong>Head Position/Rotation</strong>: Continuously update the camera based on the user’s head position and orientation, ensuring their viewpoint follows head movements in 3D space.</p></li>
+<li><p><strong>Avoiding Motion Sickness</strong>: If the simulation involves motion, ensure the camera movement is smooth and natural (avoid fast, disorienting camera moves).</p></li>
+<li><p><strong>Field of View (FOV)</strong>: Manage the field of view and camera clipping (to avoid seeing behind objects unnaturally).</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="physics-and-interaction-in-vr">
+<h2>7. <strong>Physics and Interaction in VR</strong><a class="headerlink" href="#physics-and-interaction-in-vr" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p><strong>What</strong>: In VR, the physical interaction with objects in the environment needs to feel realistic and tangible, while also considering performance.</p></li>
+<li><p><strong>Why</strong>: Immersive physics help the user feel more engaged in the simulation, but poorly implemented physics can negatively affect performance or realism.</p></li>
+<li><p><strong>Structure</strong>:</p>
+<ul>
+<li><p><strong>Collision Detection</strong>: Implement collision detection in a way that objects interact as expected when the user manipulates them.</p></li>
+<li><p><strong>Rigid Body Dynamics</strong>: Use <strong>rigid body physics</strong> for objects that should move or behave realistically (e.g., dropping an object, throwing it, or interacting with it physically).</p></li>
+<li><p><strong>Grabbing/Throwing</strong>: For hand-held interactions, ensure objects can be picked up, thrown, or manipulated smoothly by tracking the VR controller’s position and motion.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="rendering-and-performance-optimization">
+<h2>8. <strong>Rendering and Performance Optimization</strong><a class="headerlink" href="#rendering-and-performance-optimization" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p><strong>What</strong>: VR simulations need high performance, often requiring a <strong>stereoscopic rendering</strong> system (rendering two views for each eye).</p></li>
+<li><p><strong>Why</strong>: Maintaining a high frame rate (90 FPS or higher) is essential to reduce latency and ensure the user does not experience nausea or discomfort.</p></li>
+<li><p><strong>Structure</strong>:</p>
+<ul>
+<li><p><strong>Dual Rendering</strong>: Render two images (one for each eye) with different perspectives. This requires rendering optimizations to handle the higher rendering load.</p></li>
+<li><p><strong>Frame Rate Management</strong>: Strive for <strong>consistent frame rates</strong>. Use techniques such as <strong>asynchronous timewarp</strong> or <strong>prediction algorithms</strong> to compensate for dropped frames.</p></li>
+<li><p><strong>Performance Profiling</strong>: Continuously profile and optimize the rendering pipeline, object complexity, shaders, and textures.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="user-experience-ux-design-in-vr">
+<h2>9. <strong>User Experience (UX) Design in VR</strong><a class="headerlink" href="#user-experience-ux-design-in-vr" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p><strong>What</strong>: Design the user interface and interaction flows with the immersive nature of VR in mind.</p></li>
+<li><p><strong>Why</strong>: Traditional UI paradigms (like mouse pointers or keyboard presses) don’t translate well to VR. Interaction needs to feel spatial and intuitive.</p></li>
+<li><p><strong>Structure</strong>:</p>
+<ul>
+<li><p><strong>Spatial UI</strong>: Place UI elements in the virtual world itself (e.g., floating menus or objects that the user can interact with directly).</p></li>
+<li><p><strong>Gaze-based or Gesture-based Input</strong>: Use the VR controllers or gaze-based interactions to navigate menus, activate buttons, and make selections.</p></li>
+<li><p><strong>Minimize UI Intrusion</strong>: Avoid overwhelming the user with too many visual elements or HUDs that may clutter the VR experience. Keep it clean and minimal.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="testing-and-debugging">
+<h2>10. <strong>Testing and Debugging</strong><a class="headerlink" href="#testing-and-debugging" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p><strong>What</strong>: Testing in VR is crucial to ensure the simulation is comfortable, intuitive, and engaging.</p></li>
+<li><p><strong>Why</strong>: Issues like motion sickness, broken interactions, or usability problems in VR can cause negative user experiences.</p></li>
+<li><p><strong>Structure</strong>:</p>
+<ul>
+<li><p><strong>Iterative Testing</strong>: Test with real users regularly to get feedback on comfort, interaction, and usability.</p></li>
+<li><p><strong>Usability</strong>: Focus on user comfort, interaction simplicity, and feedback mechanisms (e.g., haptic or auditory cues).</p></li>
+<li><p><strong>Motion Sickness</strong>: Continually test for symptoms of motion sickness and adjust your simulation to mitigate discomfort.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="deployment-and-distribution">
+<h2>11. <strong>Deployment and Distribution</strong><a class="headerlink" href="#deployment-and-distribution" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p><strong>What</strong>: Once the VR simulation is complete, it needs to be packaged and deployed to the target platform (e.g., Oculus Store, SteamVR).</p></li>
+<li><p><strong>Why</strong>: Different platforms may have specific requirements for VR apps in terms of performance, packaging, and submission guidelines.</p></li>
+<li><p><strong>Structure</strong>: Ensure compatibility with VR platform SDKs, meet platform-specific guidelines (e.g., resolution, performance targets, input mapping), and package the simulation appropriately.</p></li>
+</ul>
+</section>
+<section id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Link to this heading">¶</a></h2>
+<p>In summary, when developing a VR simulation, programmers must ensure that they are prioritizing <strong>immersion</strong>, <strong>user comfort</strong>, and <strong>real-time performance</strong> while adhering to platform-specific guidelines. The development process includes careful attention to input management, scene optimization, physics, rendering, and most importantly, <strong>user experience</strong> to avoid discomfort like motion sickness. Continuous testing and iteration are crucial in VR development to ensure that the simulation delivers a smooth and engaging experience for the user.</p>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">SDD</a></h1>
+
+
+
+
+
+
+
+
+
+<search id="searchbox" style="display: none" role="search">
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Search"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script><h3>Navigation</h3>
+<p class="caption" role="heading"><span class="caption-text">Unit 1:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Unit%201/01_Introduction-to-SDD.html">Introduction to SDD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Unit%201/02_Research-and-Analysis.html">Research and Analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Unit%201/03_Software_Development.html">Software Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Unit%201/04_Testing.html">Testing</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Unit 2:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Unit%202/01_Business_Plan.html">Business Plan</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Unit%202/02_Marketing.html">Marketing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Unit%202/03_Presentation.html">Presentation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Resources</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Best_Practices.html">Best Practices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ExecSummary_rubric.html">Executive Summary Rubric</a></li>
+<li class="toctree-l1"><a class="reference internal" href="MarketingProposal.html">Marketing Proposal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SCRUM_Overview.html">SCRUM Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SCRUM_rubric.html">SCRUM Rubric</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">SDD Structural Considerations</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="SCRUM_rubric.html" title="previous chapter">SCRUM Rubric</a></li>
+  </ul></li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &#169;2025, Jonathan Virak.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 8.2.3</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 1.0.0</a>
+      
+      |
+      <a href="../_sources/Resources/SDD_Structural-Considerations.md.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

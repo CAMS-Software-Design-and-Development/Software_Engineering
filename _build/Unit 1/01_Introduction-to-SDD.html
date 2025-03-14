@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Introduction to SDD &#8212; Software Engineering</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=d1102ebc" />
+    <link rel="stylesheet" type="text/css" href="../_static/basic.css?v=b08954a9" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css?v=27fed22d" />
+    <script src="../_static/documentation_options.js?v=2709fde1"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Introduction to Research and Analysis" href="02_Research-and-Analysis.html" />
+    <link rel="prev" title="Introduction to Software Engineering" href="../index.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="introduction-to-sdd">
+<h1>Introduction to SDD<a class="headerlink" href="#introduction-to-sdd" title="Link to this heading">¶</a></h1>
+<p>Creating a well-structured approach for Software Design and Development ensures that the project is efficient, maintainable, and scalable. Here’s a guideline you can follow for designing and developing software:</p>
+<hr class="docutils" />
+<section id="requirements-gathering-analysis">
+<h2><strong>1. Requirements Gathering &amp; Analysis</strong><a class="headerlink" href="#requirements-gathering-analysis" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p><strong>Objective:</strong> Understand the problem and the expectations of stakeholders.</p>
+<ul>
+<li><p>Gather functional and non-functional requirements.</p></li>
+<li><p>Identify user needs, business rules, constraints, and technical environments.</p></li>
+<li><p>Document the requirements in a clear, concise, and structured manner.</p></li>
+<li><p><strong>Tools:</strong> Interviews, surveys, brainstorming sessions, user stories, use cases.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="system-design">
+<h2><strong>2. System Design</strong><a class="headerlink" href="#system-design" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p><strong>Objective:</strong> Plan the software architecture to solve the problem.</p>
+<ul>
+<li><p><strong>High-Level Design:</strong></p>
+<ul>
+<li><p>Define the system architecture (monolithic, microservices, client-server, etc.).</p></li>
+<li><p>Identify the modules or components.</p></li>
+<li><p>Choose design patterns that suit the requirements (e.g., MVC, Singleton, Factory, etc.).</p></li>
+</ul>
+</li>
+<li><p><strong>Low-Level Design:</strong></p>
+<ul>
+<li><p>Define detailed internal structures for each component/module (data flow, communication, etc.).</p></li>
+<li><p>Create diagrams (UML, flowcharts) to represent the system components and their interactions.</p></li>
+<li><p>Design databases (ER models, schema designs).</p></li>
+</ul>
+</li>
+<li><p><strong>Key Considerations:</strong></p>
+<ul>
+<li><p>Scalability, performance, and security.</p></li>
+<li><p>Maintainability, flexibility, and modifiability.</p></li>
+<li><p>Fault tolerance and disaster recovery.</p></li>
+</ul>
+</li>
+<li><p><strong>Tools:</strong> UML Diagrams (Class, Sequence, Activity), ER Diagrams, Wireframes, Flowcharts.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="technology-stack-selection">
+<h2><strong>3. Technology Stack Selection</strong><a class="headerlink" href="#technology-stack-selection" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p><strong>Objective:</strong> Choose the appropriate technologies to build the software.</p>
+<ul>
+<li><p>Select programming languages (e.g., Python, Java, JavaScript).</p></li>
+<li><p>Choose frameworks and libraries that will expedite development (e.g., React, Django, Spring).</p></li>
+<li><p>Decide on database management systems (e.g., MySQL, PostgreSQL, MongoDB).</p></li>
+<li><p>Select third-party services/APIs as needed (e.g., payment gateways, authentication services).</p></li>
+<li><p>Consider cloud services (AWS, Azure, Google Cloud) for scalability.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="software-development-process">
+<h2><strong>4. Software Development Process</strong><a class="headerlink" href="#software-development-process" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p><strong>Objective:</strong> Build the software based on the design and technology choices.</p>
+<ul>
+<li><p><strong>Agile Development (recommended for iterative development):</strong></p>
+<ul>
+<li><p>Break down the development into sprints, with clear goals and deliverables.</p></li>
+<li><p>Regular meetings (daily stand-ups, sprint reviews) to track progress.</p></li>
+</ul>
+</li>
+<li><p><strong>Waterfall Model</strong> (if project requirements are well-defined and unlikely to change).</p></li>
+<li><p><strong>Version Control:</strong> Use Git for source code management.</p></li>
+<li><p><strong>Coding Standards:</strong></p>
+<ul>
+<li><p>Follow coding conventions, write modular code, and ensure readability.</p></li>
+<li><p>Ensure consistent documentation (comments, docstrings).</p></li>
+<li><p><strong>Tools:</strong> IDEs (e.g., VSCode, IntelliJ), GitHub, GitLab, Bitbucket, CI/CD tools (Jenkins, CircleCI).</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="testing">
+<h2><strong>5. Testing</strong><a class="headerlink" href="#testing" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p><strong>Objective:</strong> Ensure the system works as expected and meets requirements.</p>
+<ul>
+<li><p><strong>Types of Testing:</strong></p>
+<ul>
+<li><p><strong>Unit Testing:</strong> Test individual components or functions.</p></li>
+<li><p><strong>Integration Testing:</strong> Test interactions between components.</p></li>
+<li><p><strong>System Testing:</strong> Test the entire system’s functionality.</p></li>
+<li><p><strong>User Acceptance Testing (UAT):</strong> Verify that the system meets user needs.</p></li>
+<li><p><strong>Performance Testing:</strong> Test scalability, load, and stress.</p></li>
+<li><p><strong>Security Testing:</strong> Identify vulnerabilities and security risks.</p></li>
+<li><p><strong>Regression Testing:</strong> Ensure that new changes don’t break existing functionality.</p></li>
+</ul>
+</li>
+<li><p>Use testing frameworks (e.g., JUnit, PyTest, Selenium).</p></li>
+<li><p><strong>Tools:</strong> Jenkins (for CI/CD), TestRail (test case management), SonarQube (code quality).</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="deployment">
+<h2><strong>6. Deployment</strong><a class="headerlink" href="#deployment" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p><strong>Objective:</strong> Deploy the software for public use or production environment.</p>
+<ul>
+<li><p><strong>Staging Environment:</strong> Deploy in a staging environment to simulate the production environment before the final release.</p></li>
+<li><p><strong>Automation:</strong> Use CI/CD pipelines for automated testing and deployment.</p></li>
+<li><p><strong>Monitoring:</strong> Implement monitoring and alerting for system health and performance.</p></li>
+<li><p><strong>Backup &amp; Rollback Plans:</strong> Ensure data integrity and create rollback strategies in case of failures.</p></li>
+<li><p><strong>Tools:</strong> Docker (for containerization), Kubernetes (for orchestration), AWS, Azure, Heroku, GitLab CI.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="maintenance-and-support">
+<h2><strong>7. Maintenance and Support</strong><a class="headerlink" href="#maintenance-and-support" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p><strong>Objective:</strong> Ensure long-term stability, user support, and improvements.</p>
+<ul>
+<li><p><strong>Bug Fixes:</strong> Address and resolve bugs reported by users or found in testing.</p></li>
+<li><p><strong>Updates:</strong> Release periodic updates for new features, security patches, and performance improvements.</p></li>
+<li><p><strong>User Support:</strong> Provide documentation, FAQs, and support systems (e.g., helpdesk, ticketing systems).</p></li>
+<li><p><strong>Tools:</strong> Jira (issue tracking), Zendesk (customer support), Sentry (error tracking).</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="documentation">
+<h2><strong>8. Documentation</strong><a class="headerlink" href="#documentation" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p><strong>Objective:</strong> Ensure that the software is well-documented for current and future developers, stakeholders, and users.</p>
+<ul>
+<li><p><strong>Technical Documentation:</strong></p>
+<ul>
+<li><p>System architecture, API documentation, database schema, and coding guidelines.</p></li>
+<li><p>Create a README file, detailed setup instructions, and developer guides.</p></li>
+</ul>
+</li>
+<li><p><strong>User Documentation:</strong></p>
+<ul>
+<li><p>User manuals, online help, tutorials, and FAQ sections.</p></li>
+</ul>
+</li>
+<li><p><strong>Tools:</strong> Markdown, Javadoc, Sphinx, Swagger (API documentation).</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="code-review-and-quality-assurance">
+<h2><strong>9. Code Review and Quality Assurance</strong><a class="headerlink" href="#code-review-and-quality-assurance" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p><strong>Objective:</strong> Maintain high-quality code and practices throughout the development lifecycle.</p>
+<ul>
+<li><p><strong>Code Review:</strong> Conduct peer reviews for code quality, style, and structure.</p></li>
+<li><p><strong>Static Code Analysis:</strong> Use tools like SonarQube to analyze code quality and identify issues early.</p></li>
+<li><p><strong>Continuous Integration:</strong> Set up continuous integration to automatically run tests and build processes.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="performance-optimization">
+<h2><strong>10. Performance Optimization</strong><a class="headerlink" href="#performance-optimization" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p><strong>Objective:</strong> Ensure that the system performs well under expected loads and is optimized.</p>
+<ul>
+<li><p>Optimize database queries, indexing, caching strategies.</p></li>
+<li><p>Profile the application for bottlenecks (e.g., CPU, memory usage).</p></li>
+<li><p>Use appropriate algorithms and data structures for performance improvement.</p></li>
+<li><p><strong>Tools:</strong> New Relic, Datadog, JProfiler, and Chrome DevTools.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="security">
+<h2><strong>11. Security</strong><a class="headerlink" href="#security" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p><strong>Objective:</strong> Ensure that the software is secure from common vulnerabilities.</p>
+<ul>
+<li><p>Implement secure coding practices (e.g., input validation, prepared statements).</p></li>
+<li><p>Use encryption (SSL/TLS, AES) for data transmission and storage.</p></li>
+<li><p>Conduct regular security audits and penetration tests.</p></li>
+<li><p>Follow security best practices like OWASP Top Ten.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">SDD</a></h1>
+
+
+
+
+
+
+
+
+
+<search id="searchbox" style="display: none" role="search">
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Search"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script><h3>Navigation</h3>
+<p class="caption" role="heading"><span class="caption-text">Unit 1:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Introduction to SDD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02_Research-and-Analysis.html">Research and Analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03_Software_Development.html">Software Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04_Testing.html">Testing</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Unit 2:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Unit%202/01_Business_Plan.html">Business Plan</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Unit%202/02_Marketing.html">Marketing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Unit%202/03_Presentation.html">Presentation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Resources</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Resources/Best_Practices.html">Best Practices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Resources/ExecSummary_rubric.html">Executive Summary Rubric</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Resources/MarketingProposal.html">Marketing Proposal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Resources/SCRUM_Overview.html">SCRUM Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Resources/SCRUM_rubric.html">SCRUM Rubric</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Resources/SDD_Structural-Considerations.html">SDD Structural Considerations</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="../index.html" title="previous chapter">Introduction to Software Engineering</a></li>
+      <li>Next: <a href="02_Research-and-Analysis.html" title="next chapter">Introduction to Research and Analysis</a></li>
+  </ul></li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &#169;2025, Jonathan Virak.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 8.2.3</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 1.0.0</a>
+      
+      |
+      <a href="../_sources/Unit 1/01_Introduction-to-SDD.md.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
