@@ -18,8 +18,8 @@
 # -- Project information -----------------------------------------------------
 
 project = 'SDD'
-copyright = '2025, Jonathan Virak'
-author = 'Jonathan Virak'
+copyright = '2025, JV'
+author = 'JV'
 
 # The full version, including alpha/beta/rc tags
 release = '0.1'
