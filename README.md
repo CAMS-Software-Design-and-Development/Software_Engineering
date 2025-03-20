@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Introduction to Software Engineering
 
 Software Engineering is more of an encompassing approach to the development of software.  For us to understand what we will be doing in this course we need to define Software Design and Development as two independent ideas to creating software.  Thus the terms *software design*, *software development*, and *software engineering* will be defined for clarity.  For the most part we use *software design*, *software development* and *software engineering* as interchangeable words.  They, however, are scaffolded ideas and we will breakdown each one.  From there you will understand the purpose and goal of the course.  Below are the differences:
