@@ -1,3 +1,5 @@
+# Structural Considerations
+
 When developing a simulation for Virtual Reality (VR) using VR glasses, the structure and considerations differ from traditional 2D or even 
 3D games because VR introduces specific challenges and opportunities. VR simulations require special handling for immersion, real-time performance, 
 input mechanisms, and user comfort. Below are key aspects and recommended structures that programmers should follow when developing VR simulations, 
