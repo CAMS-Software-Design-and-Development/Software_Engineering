@@ -24,6 +24,3 @@ Software Engineering is more of an encompassing approach to the development of s
 - **Software Design** is about planning and structuring the software.
 - **Software Development** is about building and coding the software based on the design.
 - **Software Engineering** is a holistic approach that includes both design and development, but also incorporates project management, maintenance, and the use of engineering principles to ensure the software is effective, scalable, and sustainable over time.
-
-=======
-
